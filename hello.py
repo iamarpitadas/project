@@ -35,5 +35,43 @@ for i in range(n):
     c=a
     a=b
     b=c+b
+    
+    
+    
+    
+ # school admission program
+
+import csv
+
+def write_into_cvs(info_list):
+    with open("student_info.cvs", 'a', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+
+
+        writer.writerow(info_list)
+
+condition= True
+
+while(condition):
+    student_info = input("Enter student information in following format (Name Standard Section Roll_no)")
+    print("Entered information: "+ student_info)
+
+    #split
+    student_info_list= student_info.split(' ')
+    print("Entered split up information is:" + str(student_info_list))
+
+    write_into_cvs(student_info_list)
+
+    continue_input = input(" Enter (yes or no) if you want to add information of another student : ").lower()
+    print("\n")
+    if continue_input == "Yes":
+        condition = True
+    elif continue_input == "no":
+        condition = False
+
+
+
+
+
 
 
